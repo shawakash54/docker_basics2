@@ -1,0 +1,10 @@
+version: '3' #version of docker compose we are using for the file
+# Defining services will create a network for the services here. And they can communicate between each other freely
+services:
+  redis-server:
+    image: 'redis'
+  node-app:
+    restart: always
+    build: .
+    ports:
+      - "3001:3001" # - is for specifying an array in yml file
